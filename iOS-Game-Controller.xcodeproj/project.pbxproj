@@ -8,26 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		6C5B23DC2256679C0038270D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23DB2256679C0038270D /* AppDelegate.swift */; };
-		6C5B23DE2256679C0038270D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B23DD2256679C0038270D /* GameScene.sks */; };
-		6C5B23E02256679C0038270D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B23DF2256679C0038270D /* Actions.sks */; };
 		6C5B23E22256679C0038270D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23E12256679C0038270D /* GameScene.swift */; };
 		6C5B23E42256679C0038270D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23E32256679C0038270D /* GameViewController.swift */; };
 		6C5B23E72256679C0038270D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B23E52256679C0038270D /* Main.storyboard */; };
 		6C5B23E92256679D0038270D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B23E82256679D0038270D /* Assets.xcassets */; };
 		6C5B23EC2256679D0038270D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C5B23EA2256679D0038270D /* LaunchScreen.storyboard */; };
+		6C5B23F52256690A0038270D /* AnalogStickComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23F42256690A0038270D /* AnalogStickComponent.swift */; };
+		6C5B23F7225669320038270D /* AnalogStickNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23F6225669320038270D /* AnalogStickNode.swift */; };
+		6C5B23F9225669770038270D /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23F8225669770038270D /* ButtonNode.swift */; };
+		6C5B23FB225669A90038270D /* JoystickDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23FA225669A90038270D /* JoystickDelegate.swift */; };
+		6C5B23FD225669CF0038270D /* JoystickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23FC225669CF0038270D /* JoystickController.swift */; };
+		6C5B240022566C550038270D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B23FF22566C550038270D /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6C5B23D82256679C0038270D /* iOS-Game-Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Game-Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5B23DB2256679C0038270D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C5B23DD2256679C0038270D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		6C5B23DF2256679C0038270D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		6C5B23E12256679C0038270D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		6C5B23E32256679C0038270D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		6C5B23E62256679C0038270D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C5B23E82256679D0038270D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C5B23EB2256679D0038270D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C5B23ED2256679D0038270D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C5B23F42256690A0038270D /* AnalogStickComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogStickComponent.swift; sourceTree = "<group>"; };
+		6C5B23F6225669320038270D /* AnalogStickNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogStickNode.swift; sourceTree = "<group>"; };
+		6C5B23F8225669770038270D /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		6C5B23FA225669A90038270D /* JoystickDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickDelegate.swift; sourceTree = "<group>"; };
+		6C5B23FC225669CF0038270D /* JoystickController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickController.swift; sourceTree = "<group>"; };
+		6C5B23FF22566C550038270D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +68,9 @@
 		6C5B23DA2256679C0038270D /* iOS-Game-Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6C5B23FE22566C430038270D /* Connectivity */,
+				6C5B23F3225668960038270D /* joystick */,
 				6C5B23DB2256679C0038270D /* AppDelegate.swift */,
-				6C5B23DD2256679C0038270D /* GameScene.sks */,
-				6C5B23DF2256679C0038270D /* Actions.sks */,
 				6C5B23E12256679C0038270D /* GameScene.swift */,
 				6C5B23E32256679C0038270D /* GameViewController.swift */,
 				6C5B23E52256679C0038270D /* Main.storyboard */,
@@ -71,6 +79,26 @@
 				6C5B23ED2256679D0038270D /* Info.plist */,
 			);
 			path = "iOS-Game-Controller";
+			sourceTree = "<group>";
+		};
+		6C5B23F3225668960038270D /* joystick */ = {
+			isa = PBXGroup;
+			children = (
+				6C5B23F42256690A0038270D /* AnalogStickComponent.swift */,
+				6C5B23F6225669320038270D /* AnalogStickNode.swift */,
+				6C5B23F8225669770038270D /* ButtonNode.swift */,
+				6C5B23FA225669A90038270D /* JoystickDelegate.swift */,
+				6C5B23FC225669CF0038270D /* JoystickController.swift */,
+			);
+			path = joystick;
+			sourceTree = "<group>";
+		};
+		6C5B23FE22566C430038270D /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				6C5B23FF22566C550038270D /* Message.swift */,
+			);
+			path = Connectivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C5B23E72256679C0038270D /* Main.storyboard in Resources */,
-				6C5B23DE2256679C0038270D /* GameScene.sks in Resources */,
 				6C5B23E92256679D0038270D /* Assets.xcassets in Resources */,
 				6C5B23EC2256679D0038270D /* LaunchScreen.storyboard in Resources */,
-				6C5B23E02256679C0038270D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C5B23F52256690A0038270D /* AnalogStickComponent.swift in Sources */,
 				6C5B23E22256679C0038270D /* GameScene.swift in Sources */,
 				6C5B23E42256679C0038270D /* GameViewController.swift in Sources */,
+				6C5B240022566C550038270D /* Message.swift in Sources */,
 				6C5B23DC2256679C0038270D /* AppDelegate.swift in Sources */,
+				6C5B23F7225669320038270D /* AnalogStickNode.swift in Sources */,
+				6C5B23FB225669A90038270D /* JoystickDelegate.swift in Sources */,
+				6C5B23F9225669770038270D /* ButtonNode.swift in Sources */,
+				6C5B23FD225669CF0038270D /* JoystickController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
