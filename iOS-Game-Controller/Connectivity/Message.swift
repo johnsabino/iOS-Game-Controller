@@ -16,7 +16,7 @@ enum Direction {
 }
 
 enum Message {
-    case move(direction: Direction)
+    case move(dx: Float, dy: Float)
     case pressA
     case pressB
     

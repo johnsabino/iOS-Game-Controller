@@ -13,17 +13,12 @@ import MultipeerConnectivity
 class GameScene: SKScene {
     var joystickController: JoystickController!
     
-    var peerID: MCPeerID!
-    var mcSession: MCSession!
-    var mcAdvertiserAssistant: MCAdvertiserAssistant!
-    
+    var connectivityService = ConnectivityService.shared
     override func didMove(to view: SKView) {
         backgroundColor = SKColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         setupJoystick()
         
-        peerID = MCPeerID(displayName: UIDevice.current.name)
-        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
-        mcSession.delegate = self
+        self.connectivityService.mcSession.delegate = self
     }
     
     func setupJoystick(){
@@ -44,7 +39,8 @@ extension GameScene: JoystickDelegate {
     }
     
     func joystickDidMoved(direction: CGPoint) {
-        
+        let message: Message = .move(dx: Float(direction.x), dy: Float(direction.y))
+        connectivityService.sendData(data: message.archive())
     }
     
     func joystickUpdateTracking(direction: CGPoint) {
@@ -52,19 +48,23 @@ extension GameScene: JoystickDelegate {
     }
     
     func joystickDidEndTracking(direction: CGPoint) {
-        
+        let message: Message = .move(dx: 0, dy: 0)
+        connectivityService.sendData(data: message.archive())
     }
     
     func joystickDidTapButtonA() {
-        
+        let message: Message = .pressA
+        connectivityService.sendData(data: message.archive())
     }
     
     func joystickDidTapButtonB() {
-        
+        let message: Message = .pressB
+        connectivityService.sendData(data: message.archive())
     }
+    
     func joystickDidTapButtonMenu() {
         //join session multipeer
-        let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: mcSession)
+        let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: connectivityService.mcSession)
         mcBrowser.delegate = self
         
         let vc = self.view?.window?.rootViewController
