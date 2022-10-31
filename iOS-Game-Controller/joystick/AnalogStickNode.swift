@@ -22,10 +22,7 @@ open class JoystickNode: SKNode {
         
         set(isDisabled) {
             isUserInteractionEnabled = !isDisabled
-            
-            if isDisabled {
-                resetStick()
-            }
+            if isDisabled { resetStick() }
         }
     }
     
@@ -35,7 +32,6 @@ open class JoystickNode: SKNode {
         }
         
         set(newDiameter) {
-            //stick.diameter += newDiameter - diameter
             substrate.diameter = newDiameter
         }
     }
@@ -61,12 +57,9 @@ open class JoystickNode: SKNode {
         addChild(stick)
         
         disabled = false
-        
-        
     }
     
     convenience init(diameter: CGFloat, colors: (substrate: SKColor?, stick: SKColor?)? = nil, images: (substrate: UIImage?, stick: UIImage?)? = nil) {
-        
         let substrate = AnalogStickComponent(diameter: diameter, color: colors?.substrate, image: images?.substrate)
         let stick = AnalogStickComponent(diameter: diameter * 0.5, color: colors?.stick, image: images?.stick)
         self.init(substrate: substrate, stick: stick)
@@ -85,27 +78,19 @@ open class JoystickNode: SKNode {
     }
     
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        if let touch = touches.first{
+        if let touch = touches.first {
             let location = touch.location(in: self)
             
-            guard tracking else {
-                return
-            }
+            guard tracking else { return }
             
             let maxDistance = substrate.radius - (stick.radius / 2)
-            let realDistance : CGFloat = hypot(location.x, location.y) //hypot = cauculate the hypotenuse given 2 points
-            
+            let realDistance = hypot(location.x, location.y)
             
             let limitedLocation = CGPoint(x: (location.x / realDistance) * maxDistance, y: (location.y / realDistance) * maxDistance)
             
             let needPosition = realDistance <= maxDistance  ? location : limitedLocation
-            
             stick.position = needPosition
-            
             direction = needPosition
-            
-            //joystickDelegate?.joystickDidMoved(direction: needPosition)
         }
     }
     
@@ -130,6 +115,6 @@ open class JoystickNode: SKNode {
         let moveToBack = SKAction.move(to: CGPoint.zero, duration: TimeInterval(0.1))
         moveToBack.timingMode = .easeOut
         stick.run(moveToBack)
-        direction = CGPoint.zero
+        direction = .zero
     }
 }

@@ -54,7 +54,6 @@ extension GameScene: JoystickDelegate {
     }
     
     func joystickDidTapButtonMenu() {
-        //join session multipeer
         let mcBrowser = MCBrowserViewController(serviceType: "hws-kb", session: connectivityService.mcSession)
         mcBrowser.delegate = self
         
@@ -74,10 +73,8 @@ extension GameScene: MCSessionDelegate, MCBrowserViewControllerDelegate {
         switch state {
         case .connected:
             print("Connected: \(peerID.displayName)")
-            
         case .connecting:
             print("Connecting: \(peerID.displayName)")
-            
         case .notConnected:
             print("Not Connected: \(peerID.displayName)")
         @unknown default:

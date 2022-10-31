@@ -36,9 +36,7 @@ class ButtonNode: SKNode {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let block = actionBlock {
-            block()
-        }
+        actionBlock?()
         self.run(SKAction.fadeAlpha(to: 0.2, duration: 0.1))
     }
     
