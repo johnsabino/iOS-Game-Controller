@@ -46,7 +46,7 @@ open class AnalogStickComponent: SKSpriteNode {
             texture = SKTexture(image: needImage)
             
         } else if let c = color {
-            let circle = SKShapeNode(circleOfRadius: diameter / 2 )
+            let circle = SKShapeNode(circleOfRadius: diameter / 2)
             circle.position = self.position
             circle.lineWidth = 0
             circle.fillColor = c
@@ -54,7 +54,6 @@ open class AnalogStickComponent: SKSpriteNode {
             self.color = UIColor.clear
             self.alpha = 0.4
         }
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {

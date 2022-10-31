@@ -21,22 +21,22 @@ enum Message {
     case pressB
     
     //MARK: - Struct to data
-    func archive() -> Data{
+    func archive() -> Data {
         var d = self
         return Data(bytes: &d, count: MemoryLayout.stride(ofValue: d))
     }
     
     //MARK: - Data to struct
-    static func unarchive(_ d: Data) -> Message?{
+    static func unarchive(_ d: Data) -> Message? {
         guard d.count == MemoryLayout<Message>.stride else {
             fatalError("Error!")
         }
         
         var message: Message?
-        
         d.withUnsafeBytes({(bytes: UnsafePointer<Message>) -> Void in
             message = UnsafePointer<Message>(bytes).pointee
         })
+        
         return message
     }
 }

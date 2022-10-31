@@ -15,7 +15,6 @@ final class ConnectivityService {
     
     private let peerID: MCPeerID
     let mcSession: MCSession
-    var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
     init() {
         self.peerID = MCPeerID(displayName: UIDevice.current.name)
