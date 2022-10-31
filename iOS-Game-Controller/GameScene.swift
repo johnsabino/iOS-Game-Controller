@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import MultipeerConnectivity
 
-class GameScene: SKScene {
+final class GameScene: SKScene {
     let connectivityService = ConnectivityService.shared
     
     lazy var joystickController: JoystickController = {
