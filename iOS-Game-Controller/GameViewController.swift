@@ -10,12 +10,10 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
-
+final class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
+        if let view = self.view as? SKView {
             let scene = GameScene()
             scene.scaleMode = .resizeFill
             scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -24,10 +22,8 @@ class GameViewController: UIViewController {
         }
     }
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
+    override var shouldAutorotate: Bool { true }
+    override var prefersStatusBarHidden: Bool { true }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -36,7 +32,4 @@ class GameViewController: UIViewController {
         }
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }

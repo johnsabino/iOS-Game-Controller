@@ -20,6 +20,7 @@ open class AnalogStickComponent: SKSpriteNode {
             size = CGSize(width: newSize, height: newSize)
         }
     }
+    
     var radius: CGFloat {
         get {
             return diameter * 0.5
@@ -37,14 +38,14 @@ open class AnalogStickComponent: SKSpriteNode {
         
         let size = CGSize(width: diameter, height: diameter)
         
-        if let _ = image {
+        if let image = image {
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-            image?.draw(in: CGRect(origin: CGPoint.zero, size: size), blendMode: .normal, alpha: 0.4)
+            image.draw(in: CGRect(origin: CGPoint.zero, size: size), blendMode: .normal, alpha: 0.4)
             let needImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             texture = SKTexture(image: needImage)
             
-        }else if let c = color{
+        } else if let c = color {
             let circle = SKShapeNode(circleOfRadius: diameter / 2 )
             circle.position = self.position
             circle.lineWidth = 0

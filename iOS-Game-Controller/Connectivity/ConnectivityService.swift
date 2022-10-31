@@ -9,12 +9,12 @@
 import Foundation
 import MultipeerConnectivity
 
-class ConnectivityService {
+final class ConnectivityService {
     
     static let shared = ConnectivityService()
     
-    var peerID: MCPeerID!
-    var mcSession: MCSession!
+    private let peerID: MCPeerID
+    let mcSession: MCSession
     var mcAdvertiserAssistant: MCAdvertiserAssistant!
     
     init() {
@@ -22,7 +22,7 @@ class ConnectivityService {
         self.mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
     }
     
-    func sendData(data: Data){
+    func sendData(data: Data) {
         do {
             try mcSession.send(data, toPeers: mcSession.connectedPeers, with: .reliable)
         } catch{

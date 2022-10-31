@@ -20,13 +20,13 @@ enum Message {
     case pressA
     case pressB
     
-    //Struct to data
+    //MARK: - Struct to data
     func archive() -> Data{
         var d = self
         return Data(bytes: &d, count: MemoryLayout.stride(ofValue: d))
     }
     
-    //Data to struct
+    //MARK: - Data to struct
     static func unarchive(_ d: Data) -> Message?{
         guard d.count == MemoryLayout<Message>.stride else {
             fatalError("Error!")
